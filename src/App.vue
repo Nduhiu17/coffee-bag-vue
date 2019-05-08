@@ -1,33 +1,28 @@
 <template>
   <div id="app">
-    <div class="nav-bar">
-      <div class="nav-logo">
-        <router-link to="/">Coffee Bag</router-link>
-      </div>
-      <div class="nav-details">
-        <div class="nav-about">
-          <router-link to="/about">About</router-link>
-        </div>
-        <div class="nav-documentation">Documentation</div>
-        <div class="nav-contacts">Contacts</div>
-      </div>
-    </div>
+    <Header/>
     <router-view/>
   </div>
 </template>
 
-<style>
+<script>
+import Header from "./components/layout/Header";
+export default {
+  name: "app",
+  components: {
+    Header
+  }
+};
+</script>
+
+
+<style scoped>
 body,
 html {
   margin: 0;
   padding: 5px;
   font-family: Open Sans, Segoe UI, Helvetica Neue, Helvetica, Raleway, Arial,
     sans-serif;
-}
-
-.nav-bar a {
-  color: #fff;
-  text-decoration: none;
 }
 
 .nav-bar {

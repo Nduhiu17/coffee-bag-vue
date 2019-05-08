@@ -1,49 +1,23 @@
-
 <template>
-<div class="app">
-  <body>
-    <Header/>
-    <div class="header">Open Source Community Forum - Software</div>
-    <div class="button-wrapper">
-      <router-link to="/create">
-        <div class="new-forum">New Discussion</div>
-      </router-link>
+  <div class="nav-bar">
+    <div class="nav-logo">
+      <router-link to="/">Coffee Bag</router-link>
     </div>
-    <div class="main-container">
-      <Todos v-bind:todos="todos"/>
+    <div class="nav-details">
+      <div class="nav-about">
+        <router-link to="/about">About</router-link>
+      </div>
+      <div class="nav-documentation">Documentation</div>
+      <div class="nav-contacts">Contacts</div>
     </div>
-  </body>
-</div>
+  </div>
 </template>
 
 <script>
-import Todos from "../components/Todos";
-// import AddForum from "../views/AddForum";
-import axios from "axios";
-
 export default {
-  name: "Home",
-  components: {
-    // AddForum,
-    Todos
-  },
-  data() {
-    return {
-      todos: []
-    };
-  },
-  methods: {},
-  created() {
-    axios
-      .get("https://forum-java-api.herokuapp.com/api/v1/forums")
-      .then(res => (this.todos = res.data.content))
-      .catch(err => {
-        console.log(err);
-      });
-  }
+  name: "Header"
 };
-</script> 
-
+</script>
 
 <style scoped>
 body,
@@ -54,13 +28,6 @@ html {
     sans-serif;
 }
 
-.button-wrapper > a {
-  text-decoration: none;
-}
-.new-forum > a {
-  text-decoration: none;
-  color: inherit;
-}
 .nav-bar {
   background-color: #333;
   border-bottom: 1px solid #d6d7d9;
@@ -70,6 +37,10 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
 }
 
 .nav-details {
@@ -79,6 +50,11 @@ html {
 
 .nav-details > div {
   padding: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .nav-logo {
@@ -95,9 +71,6 @@ html {
   border-bottom: 1px solid #d6d7d9;
   font-weight: 800;
   font-size: 22px;
-  position: fixed;
-  width: 100%;
-  background-color: #ffffff;
 }
 
 .forum-item {
@@ -175,6 +148,5 @@ html {
 .button-wrapper {
   display: flex;
   justify-content: flex-end;
-  margin-top: 28vh;
 }
 </style>

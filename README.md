@@ -1,4 +1,4 @@
-# forum-vue
+# vue-todo-list
 
 ## Project setup
 ```

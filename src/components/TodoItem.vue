@@ -1,50 +1,28 @@
 
 <template>
-<div class="app">
-  <body>
-    <Header/>
-    <div class="header">Open Source Community Forum - Software</div>
-    <div class="button-wrapper">
-      <router-link to="/create">
-        <div class="new-forum">New Discussion</div>
-      </router-link>
+  <div class="forum-item">
+    <div class="forum-contents">
+      <div class="forum-title">
+        <p>{{todo.title}}</p>
+      </div>
+      <div class="forum-content-details">
+        <div class="forum-date-created">Created at: {{todo.createdAt}}</div>
+        <div class="forum-date-modified">Edited On: {{todo.updatedAt}}</div>
+      </div>
     </div>
-    <div class="main-container">
-      <Todos v-bind:todos="todos"/>
+    <div class="forum-details">
+      <div class="forum-views">18 Views</div>
+      <div class="forum-comments">77 Comments</div>
     </div>
-  </body>
-</div>
+  </div>
 </template>
-
 <script>
-import Todos from "../components/Todos";
-// import AddForum from "../views/AddForum";
-import axios from "axios";
-
 export default {
-  name: "Home",
-  components: {
-    // AddForum,
-    Todos
-  },
-  data() {
-    return {
-      todos: []
-    };
-  },
-  methods: {},
-  created() {
-    axios
-      .get("https://forum-java-api.herokuapp.com/api/v1/forums")
-      .then(res => (this.todos = res.data.content))
-      .catch(err => {
-        console.log(err);
-      });
-  }
+  name: "TodoItem",
+  props: ["todo"],
+  methods: {}
 };
-</script> 
-
-
+</script>
 <style scoped>
 body,
 html {
@@ -54,13 +32,6 @@ html {
     sans-serif;
 }
 
-.button-wrapper > a {
-  text-decoration: none;
-}
-.new-forum > a {
-  text-decoration: none;
-  color: inherit;
-}
 .nav-bar {
   background-color: #333;
   border-bottom: 1px solid #d6d7d9;
@@ -95,9 +66,6 @@ html {
   border-bottom: 1px solid #d6d7d9;
   font-weight: 800;
   font-size: 22px;
-  position: fixed;
-  width: 100%;
-  background-color: #ffffff;
 }
 
 .forum-item {
@@ -175,6 +143,7 @@ html {
 .button-wrapper {
   display: flex;
   justify-content: flex-end;
-  margin-top: 28vh;
 }
 </style>
+
+
