@@ -36,7 +36,7 @@ export default {
   created() {
     axios
       .get("https://forum-java-api.herokuapp.com/api/v1/forums")
-      .then(res => (this.todos = res.data.content))
+      .then(res => (this.todos = res.data.content.reverse()))
       .catch(err => {
         console.log(err);
       });

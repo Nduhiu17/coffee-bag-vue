@@ -3,8 +3,6 @@
     <form class="forum-form" @submit="addTodo">
       <label for="title" class="label-div">Discussion Title</label>
       <input type="text" v-model="title" name="title" class="forum-form-title">
-      <label for="details" class="label-div">Discussion Details</label>
-      <textarea rows="5"></textarea>
       <div class="post-button-div">
         <input type="submit" value="Submit" class="post-button">
       </div>
@@ -30,6 +28,7 @@ export default {
       //send up to parent
       this.$emit("add-todo", newTodo);
       this.title = "";
+      this.$router.push("/");
     }
   }
 };
@@ -50,7 +49,8 @@ export default {
   height: 36px;
   line-height: 36px;
   margin: 0;
-  padding: 3px 85px;
+  min-width: 30vw;
+  padding: 3px 3px;
 }
 
 .form-wrapper {
