@@ -6,8 +6,8 @@
         <p>{{todo.title}}</p>
       </div>
       <div class="forum-content-details">
-        <div class="forum-date-created">Created at: {{todo.createdAt}}</div>
-        <div class="forum-date-modified">Edited On: {{todo.updatedAt}}</div>
+        <div class="forum-date-created">Created at: {{getHumanDate(todo.createdAt)}}</div>
+        <div class="forum-date-modified">Edited On: {{getHumanDate(todo.updatedAt)}}</div>
       </div>
     </div>
     <div class="forum-details">
@@ -17,10 +17,14 @@
   </div>
 </template>
 <script>
+import dateFormat from "./dateFormat";
+import moment from "moment";
 export default {
   name: "TodoItem",
   props: ["todo"],
-  methods: {}
+  methods: {
+    getHumanDate: dateFormat
+  }
 };
 </script>
 <style scoped>
