@@ -11,8 +11,8 @@
       </div>
     </div>
     <div class="forum-details">
-      <div class="forum-views">18 Views</div>
-      <div class="forum-comments">77 Comments</div>
+      <!-- <div class="forum-views">18 Views</div> -->
+      <!-- <div class="forum-comments">77 Comments</div> -->
     </div>
   </div>
 </template>

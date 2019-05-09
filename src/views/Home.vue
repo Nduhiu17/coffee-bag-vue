@@ -18,13 +18,11 @@
 
 <script>
 import Todos from "../components/Todos";
-// import AddForum from "../views/AddForum";
 import axios from "axios";
 
 export default {
   name: "Home",
   components: {
-    // AddForum,
     Todos
   },
   data() {

@@ -8,7 +8,9 @@
         <router-link to="/about">About</router-link>
       </div>
       <div class="nav-documentation">Documentation</div>
-      <div class="nav-contacts">Contacts</div>
+      <div class="nav-contacts">
+        <router-link to="/contacts">Contacts</router-link>
+      </div>
     </div>
   </div>
 </template>
