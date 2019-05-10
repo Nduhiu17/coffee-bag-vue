@@ -28,7 +28,10 @@ export default {
         .post("https://forum-java-api.herokuapp.com/api/v1/forums", {
           title
         })
-        .then(res => (this.todos = [...this.todos, res.data.content]))
+        .then(res => {
+          this.$router.push("/");
+          return (this.todos = [...this.todos, res.data.content]);
+        })
         .catch(err => console.log(err));
     }
   }

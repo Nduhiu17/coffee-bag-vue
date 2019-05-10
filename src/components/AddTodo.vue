@@ -28,7 +28,7 @@ export default {
       //send up to parent
       this.$emit("add-todo", newTodo);
       this.title = "";
-      this.$router.push("/");
+      // this.$router.push("/");
     }
   }
 };

@@ -1,7 +1,6 @@
 <template>
   <div class="topic">
     <div class="topic-title">
-      <h1>Vanilla 2.8.3 is now available for download - Security patches.</h1>
       <h1>{{forum}}</h1>
     </div>
     <div class="topic-posts">
