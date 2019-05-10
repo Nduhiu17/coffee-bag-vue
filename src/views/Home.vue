@@ -10,7 +10,7 @@
       </router-link>
     </div>
     <div class="main-container">
-      <Todos v-bind:todos="todos"/>
+      <Todos v-bind:todos="todos" v-on:store-forum="storeForum"/>
     </div>
   </body>
 </div>
@@ -30,7 +30,13 @@ export default {
       todos: []
     };
   },
-  methods: {},
+  methods: {
+    storeForum(id, title) {
+      let forum = { id: id, title: title };
+      localStorage.setItem("title", title);
+      localStorage.setItem("id", id);
+    }
+  },
   created() {
     axios
       .get("https://forum-java-api.herokuapp.com/api/v1/forums")

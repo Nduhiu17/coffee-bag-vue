@@ -30,7 +30,15 @@ export default new Router({
 
             component: () =>
                 import ( /* webpackChunkName: "contacts" */ './views/Contacts.vue')
+        },
+        {
+            path: '/topic-details',
+            name: 'topic-details',
+
+            component: () =>
+                import ( /* webpackChunkName: "topic-details" */ './views/ForumDetails.vue')
         }
+
 
     ]
 })

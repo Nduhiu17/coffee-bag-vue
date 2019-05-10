@@ -3,17 +3,16 @@
   <div class="forum-item">
     <div class="forum-contents">
       <div class="forum-title">
-        <p>{{todo.title}}</p>
+        <router-link to="/topic-details">
+          <p @click="$emit('store-forum',todo.id,todo.title)">{{todo.title}}</p>
+        </router-link>
       </div>
       <div class="forum-content-details">
         <div class="forum-date-created">Created at: {{getHumanDate(todo.createdAt)}}</div>
         <div class="forum-date-modified">Edited On: {{getHumanDate(todo.updatedAt)}}</div>
       </div>
     </div>
-    <div class="forum-details">
-      <!-- <div class="forum-views">18 Views</div> -->
-      <!-- <div class="forum-comments">77 Comments</div> -->
-    </div>
+    <div class="forum-details"></div>
   </div>
 </template>
 <script>
@@ -35,7 +34,10 @@ html {
   font-family: Open Sans, Segoe UI, Helvetica Neue, Helvetica, Raleway, Arial,
     sans-serif;
 }
-
+a {
+  text-decoration: none;
+  color: inherit;
+}
 .nav-bar {
   background-color: #333;
   border-bottom: 1px solid #d6d7d9;
